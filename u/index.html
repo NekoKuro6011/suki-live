@@ -60,11 +60,9 @@
     }
 
     body.has-body-bg .header {
-      background: rgba(255, 255, 255, 0.62);
+      background: rgba(255, 255, 255, 0.68);
       border: 1px solid rgba(255, 255, 255, 0.35);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
     }
 
     .avatar {
@@ -115,8 +113,7 @@
     body.has-body-bg .playlist.grid-view li,
     body.has-body-bg .modal-content,
     body.has-body-bg .modal-song-info {
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.78);
     }
 
     .card h2 {
@@ -482,13 +479,11 @@
     }
 
     body.has-body-bg .playlist.list-view li {
-      background: rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.52);
       border: 1px solid rgba(255, 255, 255, 0.32);
       border-radius: 10px;
       padding: 0.8rem 0.9rem;
       margin-bottom: 0.6rem;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
     }
 
     .playlist.list-view li:last-child {
@@ -569,6 +564,17 @@
       font-weight: 500;
       color: var(--text);
       margin-bottom: 0.2rem;
+    }
+
+    body.has-body-bg .song-title {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      max-width: 100%;
+      padding: 0.28rem 0.5rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.36);
     }
 
     .song-meta {
