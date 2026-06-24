@@ -1,0 +1,14 @@
+{
+  "name": "窈莺",
+  "tagline": "你们好！这里是窈窈！ 歌势｜杂谈 直播时间:21:00-00:00",
+  "bio": false,
+  "show_playlist": true,
+  "social": [
+    {
+      "label": "B站",
+      "url": "https://space.bilibili.com/3546568225458622"
+    }
+  ],
+  "created_at": "2026-06-24",
+  "updated_at": "2026-06-24"
+}
