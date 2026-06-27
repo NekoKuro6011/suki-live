@@ -1,0 +1,28 @@
+{
+  "title": "梨子卷的歌单",
+  "description": "梨子卷和她不一定拿手的505首歌",
+  "items": [
+    {
+      "title": "山楂树の恋",
+      "artist": "程佳佳",
+      "source": "网易云",
+      "url": "https://y.qq.com/n/ryqq_v2/songDetail/0021uyhB2um654",
+      "cover": "https://y.qq.com/music/photo_new/T002R300x300M000004exjMO1lm27e_4.jpg?max_age=2592000",
+      "added_at": "2026-06-27",
+      "language": "中文",
+      "genre": "流行情歌",
+      "access": "免费"
+    },
+    {
+      "title": "歌曲名",
+      "artist": "作者",
+      "source": "来源平台",
+      "url": "播放链接",
+      "cover": "封面图",
+      "added_at": "添加时间",
+      "language": "语言",
+      "genre": "风格",
+      "access": "点歌权限"
+    }
+  ]
+}
