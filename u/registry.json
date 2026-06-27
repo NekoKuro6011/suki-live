@@ -2,6 +2,13 @@
   "updated_at": "2026-03-05",
   "vtubers": [
     {
+      "id": "riko",
+      "name": "梨子卷Riko",
+      "tagline": "你说天长 我就递酒",
+      "registered_at": "2026-06-27",
+      "status": "active"
+    },
+    {
       "id": "xiaoxi",
       "name": "小希Channel",
       "tagline": "中国虚拟主播先驱 · 国V始皇帝 · 九年温暖相伴",
