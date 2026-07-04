@@ -1,20 +1,22 @@
 :root {
-  --bg: #f5f6f8;
-  --bg-gradient-start: #f8f4f7;
-  --bg-gradient-end: #eef3f8;
+  --bg: #fff8fb;
+  --bg-gradient-start: #fff7f6;
+  --bg-gradient-end: #eef8ff;
   --surface: #ffffff;
-  --surface-soft: #f3f6f9;
+  --surface-soft: #fff1f6;
   --card: var(--surface);
-  --text: #27313d;
-  --text-light: #667385;
-  --text-faint: #8a95a3;
-  --accent: #9db7cf;
-  --accent-hover: #89a8c3;
-  --accent-soft: #eaf1f7;
-  --rose-accent: #d8b7c6;
-  --rose-soft: #f5eaf0;
-  --border: #d9e1ea;
-  --shadow: 0 14px 32px rgba(39, 49, 61, 0.08);
+  --text: #38445a;
+  --text-light: #6f7c94;
+  --text-faint: #98a3b8;
+  --accent: #7fc8ff;
+  --accent-hover: #5fb8f6;
+  --accent-soft: #dff4ff;
+  --rose-accent: #ff9fc2;
+  --rose-soft: #ffe0ec;
+  --mint-accent: #8ee3c4;
+  --lemon-accent: #ffe08a;
+  --border: #e8d9e4;
+  --shadow: 0 14px 34px rgba(132, 152, 190, 0.16);
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
@@ -339,33 +341,33 @@ body.has-body-bg .modal-song-info {
 }
 
 .access-免费 {
-  background: #e5eee8;
-  color: #587362;
+  background: #dbf7eb;
+  color: #4d8d73;
 }
 
 .access-付费 {
-  background: #f2e6e7;
-  color: #89686f;
+  background: #ffe3ee;
+  color: #b06e8d;
 }
 
 .access-歌切 {
-  background: var(--rose-soft);
-  color: #7f6778;
+  background: #fff0b8;
+  color: #9c8050;
 }
 
 .access-舰长专属 {
-  background: #e7eef4;
-  color: #5f7286;
+  background: #dff4ff;
+  color: #5488ab;
 }
 
 .access-提督专属 {
-  background: #f1eadf;
-  color: #8d7b5d;
+  background: #fff3c7;
+  color: #a6864f;
 }
 
 .access-总督专属 {
-  background: #f3e7ed;
-  color: #8a6978;
+  background: #ffd9e7;
+  color: #b46887;
 }
 
 .playlist-header {
@@ -427,28 +429,24 @@ body.has-body-bg .modal-song-info {
 }
 
 .playlist.list-view li {
-  padding: 0.7rem 0;
-  border-bottom: 1px dashed var(--border);
+  padding: 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-}
-
-body.has-body-bg .playlist.list-view li {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: var(--radius-md);
-  padding: 0.8rem 0.9rem;
   margin-bottom: 0.6rem;
 }
 
-.playlist.list-view li:last-child {
-  border-bottom: none;
+body.has-body-bg .playlist.list-view li {
+  background: rgba(255, 255, 255, 0.84);
 }
 
-body.has-body-bg .playlist.list-view li:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
-  margin-bottom: 0;
+.playlist.list-view li:hover {
+  border-color: var(--accent-hover);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
 .list-view .song-cover {
@@ -519,17 +517,6 @@ body.has-body-bg .playlist.list-view li:last-child {
   font-weight: 600;
   color: var(--text);
   margin-bottom: 0.2rem;
-}
-
-body.has-body-bg .song-title {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  max-width: 100%;
-  padding: 0.32rem 0.56rem;
-  border-radius: var(--radius-sm);
-  background: rgba(234, 241, 247, 0.88);
 }
 
 .song-meta {

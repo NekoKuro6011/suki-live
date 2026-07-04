@@ -1,20 +1,22 @@
 :root {
-  --bg: #f5f6f8;
-  --bg-gradient-start: #f8f4f7;
-  --bg-gradient-end: #eef3f8;
+  --bg: #fff8fb;
+  --bg-gradient-start: #fff7f6;
+  --bg-gradient-end: #eef8ff;
   --surface: #ffffff;
-  --surface-soft: #f3f6f9;
+  --surface-soft: #fff1f6;
   --panel: var(--surface);
-  --text: #27313d;
-  --text-light: #667385;
-  --text-faint: #8a95a3;
-  --accent: #9db7cf;
-  --accent-hover: #89a8c3;
-  --accent-soft: #eaf1f7;
-  --rose-accent: #d8b7c6;
-  --rose-soft: #f5eaf0;
-  --border: #d9e1ea;
-  --shadow: 0 14px 32px rgba(39, 49, 61, 0.08);
+  --text: #38445a;
+  --text-light: #6f7c94;
+  --text-faint: #98a3b8;
+  --accent: #7fc8ff;
+  --accent-hover: #5fb8f6;
+  --accent-soft: #dff4ff;
+  --rose-accent: #ff9fc2;
+  --rose-soft: #ffe0ec;
+  --mint-accent: #8ee3c4;
+  --lemon-accent: #ffe08a;
+  --border: #e8d9e4;
+  --shadow: 0 14px 34px rgba(132, 152, 190, 0.16);
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
@@ -368,19 +370,19 @@ footer a:hover {
 }
 
 .registry-page .status-active {
-  background: #e5eee8;
-  color: #587362;
+  background: #dbf7eb;
+  color: #4d8d73;
 }
 
 .registry-page .status-inactive {
-  background: #f2e6e7;
-  color: #89686f;
+  background: #ffe3ee;
+  color: #b06e8d;
 }
 
 .registry-page .status-banned,
 .registry-page .status-memorial {
-  background: var(--rose-soft);
-  color: #7f6778;
+  background: #fff0b8;
+  color: #9c8050;
 }
 
 .registry-page .loading,
