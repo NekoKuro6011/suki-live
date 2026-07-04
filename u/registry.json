@@ -589,6 +589,13 @@
       "status": "active"
     },
     {
+      "id": "cynthia",
+      "name": "苍葭Cynthia",
+      "tagline": "小鸟向你使用了魔法～变得更喜欢小鸟吧！",
+      "registered_at": "2026-07-04",
+      "status": "active"
+    },
+    {
       "id": "example",
       "name": "Example",
       "tagline": "用歌声传递温柔的虚拟歌姬 🌸",
