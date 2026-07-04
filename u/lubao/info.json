@@ -4,7 +4,7 @@
   "bio": false,
   "show_playlist": true,
   "show_header_bg": false,
-  "show_body_bg": false,
+  "show_body_bg": true,
   "social": [
     {
       "label": "B站",
@@ -12,5 +12,5 @@
     }
   ],
   "created_at": "2026-07-03",
-  "updated_at": "2026-07-03"
+  "updated_at": "2026-07-04"
 }

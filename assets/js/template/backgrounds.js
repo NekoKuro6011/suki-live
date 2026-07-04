@@ -1,6 +1,38 @@
 (function () {
   const template = (window.SukiTemplate = window.SukiTemplate || {});
 
+  function getAssetCandidates(base, assetName, isMobile) {
+    const timestamp = Date.now();
+    const buildUrl = (name, ext) => `${base}/${name}.${ext}?t=${timestamp}`;
+
+    if (!isMobile) {
+      return [buildUrl(assetName, "webp"), buildUrl(assetName, "png")];
+    }
+
+    return [
+      buildUrl(`${assetName}_mobile`, "webp"),
+      buildUrl(`${assetName}_mobile`, "png"),
+      buildUrl(assetName, "webp"),
+      buildUrl(assetName, "png"),
+    ];
+  }
+
+  async function findFirstAvailableAsset(candidates, checkAsset) {
+    for (const candidate of candidates) {
+      if (await checkAsset(candidate)) {
+        return candidate;
+      }
+    }
+
+    return null;
+  }
+
+  function checkImage(url) {
+    return fetch(url, { method: "HEAD" })
+      .then((response) => response.ok)
+      .catch(() => false);
+  }
+
   function setupHeaderBackground(state, info) {
     if (info.show_header_bg !== true) return;
 
@@ -13,27 +45,13 @@
       }
     };
 
-    const checkImage = (url) =>
-      fetch(url, { method: "HEAD" })
-        .then((response) => (response.ok ? url : null))
-        .catch(() => null);
-
     const loadHeaderBg = () => {
       const isMobile = window.innerWidth <= 640;
-      const mobileUrl = `${state.base}/head_bg_mobile.png?t=${Date.now()}`;
-      const desktopUrl = `${state.base}/head_bg.png?t=${Date.now()}`;
+      const candidates = getAssetCandidates(state.base, "head_bg", isMobile);
 
-      if (isMobile) {
-        checkImage(mobileUrl)
-          .then((found) => (found ? found : checkImage(desktopUrl)))
-          .then((found) => {
-            if (typeof found === "string") applyHeaderBg(found);
-          });
-      } else {
-        checkImage(desktopUrl).then((found) => {
-          if (found) applyHeaderBg(found);
-        });
-      }
+      findFirstAvailableAsset(candidates, checkImage).then((found) => {
+        if (typeof found === "string") applyHeaderBg(found);
+      });
     };
 
     loadHeaderBg();
@@ -48,12 +66,6 @@
   function setupBodyBackground(state, info) {
     if (info.show_body_bg !== true) return;
 
-    const getBgUrl = (isMobile) => {
-      const mobileUrl = `${state.base}/body_bg_mobile.png?t=${Date.now()}`;
-      const desktopUrl = `${state.base}/body_bg.png?t=${Date.now()}`;
-      return isMobile ? mobileUrl : desktopUrl;
-    };
-
     const applyBg = (url) => {
       document.body.classList.add("has-body-bg");
       document.documentElement.style.setProperty("--body-bg", `url(${url})`);
@@ -62,25 +74,12 @@
     };
 
     const checkAndApply = (isMobile) => {
-      const preferredUrl = getBgUrl(isMobile);
-      const fallbackUrl = `${state.base}/body_bg.png?t=${Date.now()}`;
+      const candidates = getAssetCandidates(state.base, "body_bg", isMobile);
 
-      fetch(preferredUrl, { method: "HEAD" })
-        .then((response) => {
-          if (response.ok) {
-            applyBg(preferredUrl);
-            return null;
-          }
-
-          if (isMobile) {
-            return fetch(fallbackUrl, { method: "HEAD" });
-          }
-
-          return null;
-        })
-        .then((response) => {
-          if (response?.ok) {
-            applyBg(fallbackUrl);
+      findFirstAvailableAsset(candidates, checkImage)
+        .then((found) => {
+          if (typeof found === "string") {
+            applyBg(found);
           }
         })
         .catch(() => {
@@ -100,6 +99,10 @@
   }
 
   template.backgrounds = {
+    __test: {
+      findFirstAvailableAsset,
+      getAssetCandidates,
+    },
     setupBodyBackground,
     setupHeaderBackground,
   };
